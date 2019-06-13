@@ -25,7 +25,27 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
-print(products)
+
+product_count = len(products)
+#print(products["name"])
+#num = products["id"]
+#name = products["name"]
+#price = products["price"]
+
+
+print("--------------")
+#print("THERE ARE " +str(product_count) + " PRODUCTS:")
+print(f"THERE ARE {product_count} PRODUCTS:")
+#print("THERE ARE ",product_count," PRODUCTS")
+print(type(products))
+print("--------------")
+
+for item in products:
+    print(item)
+
+#if products["id"] >=0:
+    #print(name)
+
 # pprint(products)
 
 # TODO: write some Python code here to produce the desired output
