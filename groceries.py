@@ -1,6 +1,9 @@
 # groceries.py
 
-#from pprint import pprint
+from pprint import pprint
+
+def to_usd(my_price):
+    return "${0:,.2f}".format(my_price)
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -40,19 +43,46 @@ print(f"THERE ARE {product_count} PRODUCTS:")
 print(type(products))
 print("--------------")
 
+
 print(products[0])
 
-
-
 for item in products:
+    #print(type(item))
     N = item["name"]
     P = item["price"]
     #print(item["name"])
-    print(N,".....",P)
-    #print(f"{item['name']}...{item['price']}")
+    #print(N,".....",P)
+    price_usd = to_usd(P)
+    print(f"{N} ... {price_usd}")
+    #print(f"{N}...{P}")
     #print(item.get("name"))
 
 
 # pprint(products)
 
 # TODO: write some Python code here to produce the desired output
+
+#pprint(products)
+
+#products_count = len(products)
+
+#print("THERE ARE 20 PRODUCTS:")
+#> "one string" + "another string"
+#print("THERE ARE " + str(products_count) + " PRODUCTS:")
+
+#print("--------------")
+#print(f"THERE ARE {products_count} PRODUCTS:")
+#print("--------------")
+
+# todo: sort the products
+
+#for item in products:
+    #print(type(item))
+    #print(p["name"])
+    #print(item["name"])
+    #n = item["name"]
+    #price = item["price"]
+    #print(f"{item['name']} ... {item['price']}")
+
+    #price_usd = to_usd(item['price'])
+    #print(f"{item['name']} ... {price_usd}")
