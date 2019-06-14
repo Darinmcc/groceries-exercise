@@ -46,7 +46,7 @@ print("--------------")
 
 print(products[0])
 
-for item in products:
+item["name"] for item in products:
     #print(type(item))
     N = item["name"]
     P = item["price"]
