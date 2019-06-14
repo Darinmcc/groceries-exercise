@@ -40,11 +40,18 @@ print(f"THERE ARE {product_count} PRODUCTS:")
 print(type(products))
 print("--------------")
 
-for item in products:
-    print(item)
+print(products[0])
 
-#if products["id"] >=0:
-    #print(name)
+
+
+for item in products:
+    N = item["name"]
+    P = item["price"]
+    #print(item["name"])
+    print(N,".....",P)
+    #print(f"{item['name']}...{item['price']}")
+    #print(item.get("name"))
+
 
 # pprint(products)
 
