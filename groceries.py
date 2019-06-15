@@ -112,12 +112,16 @@ for item in products:
     if item["department"] not in departments_list:
         departments_list.append(item["department"])
 
-#
+#another way to remove dupes
+#unique_departments = list(set(departments_list))
+
 department_count = len(departments_list)
 
 print("--------------")
 print(f"THERE ARE {department_count} DEPARTMENTS:")
 print("--------------")
 
+departments_list.sort()
+
 for d in departments_list:
-    print(d)
+    print(d.title())
