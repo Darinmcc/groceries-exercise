@@ -2,8 +2,8 @@
 
 from pprint import pprint
 
-def to_usd(my_price):
-    return "${0:,.2f}".format(my_price)
+
+
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -28,6 +28,16 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
+def to_usd(my_price):
+    return "${0:,.2f}".format(my_price)
+
+def sort_by_name(any_product):
+    return any_product["name"]
+
+#sort prior to loop, need to sort before print
+#sorted fucntion -- 2 parameters, list to be sortes (product, and the way to sort)
+sorted_products = sorted(products, key=sort_by_name)
+
 
 product_count = len(products)
 #print(products["name"])
@@ -36,24 +46,25 @@ product_count = len(products)
 #price = products["price"]
 
 
-print("--------------")
 #print("THERE ARE " +str(product_count) + " PRODUCTS:")
-print(f"THERE ARE {product_count} PRODUCTS:")
 #print("THERE ARE ",product_count," PRODUCTS")
-print(type(products))
+#print(type(products))
+
+print("--------------")
+print(f"THERE ARE {product_count} PRODUCTS:")
 print("--------------")
 
 
-print(products[0])
+# loop through sorted products instead of products
 
-item["name"] for item in products:
+for item in sorted_products:
     #print(type(item))
-    N = item["name"]
-    P = item["price"]
+    #N = item["name"]
+    #P = item["price"]
     #print(item["name"])
     #print(N,".....",P)
-    price_usd = to_usd(P)
-    print(f"{N} ... {price_usd}")
+    price_usd = to_usd(item['price'])
+    print(f"+ {item['name']} ... {price_usd}")
     #print(f"{N}...{P}")
     #print(item.get("name"))
 
