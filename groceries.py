@@ -97,3 +97,27 @@ for item in sorted_products:
 
     #price_usd = to_usd(item['price'])
     #print(f"{item['name']} ... {price_usd}")
+
+
+#creating a list
+#assembling one list based on the contents of another list
+#arr = [1,2,3,4]
+#arr2 = []
+#for i in arr:
+#   arr2.append(i*100)
+departments_list = []
+
+for item in products:
+    #print(item["department"])
+    if item["department"] not in departments_list:
+        departments_list.append(item["department"])
+
+#
+department_count = len(departments_list)
+
+print("--------------")
+print(f"THERE ARE {department_count} DEPARTMENTS:")
+print("--------------")
+
+for d in departments_list:
+    print(d)
