@@ -35,7 +35,7 @@ def sort_by_name(any_product):
     return any_product["name"]
 
 #sort prior to loop, need to sort before print
-#sorted fucntion -- 2 parameters, list to be sortes (product, and the way to sort)
+#sorted fucntion -- 2 parameters, list to be sortes 1.product, and 2 the way to sort)
 sorted_products = sorted(products, key=sort_by_name)
 
 
@@ -124,4 +124,16 @@ print("--------------")
 departments_list.sort()
 
 for d in departments_list:
-    print(d.title())
+    matching_products = [item for item in products if item["department"] == d]
+    matching_products_count = len(matching_products)
+    print(d.title() + f" ({matching_products_count} products)")
+
+
+#filter function 2 parameters 1 way to sort, and th list to be sorted from
+#filter(x, arr)
+
+#list comprehension
+#[] starts and end with square
+# team for team in teams if team["city"] == city]
+#return the item for each item in our list of items if it matches some list of criterea
+3
