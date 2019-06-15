@@ -113,7 +113,6 @@ for item in products:
         departments_list.append(item["department"])
 
 #another way to remove dupes
-#unique_departments = list(set(departments_list))
 
 department_count = len(departments_list)
 
@@ -126,7 +125,11 @@ departments_list.sort()
 for d in departments_list:
     matching_products = [item for item in products if item["department"] == d]
     matching_products_count = len(matching_products)
-    print(d.title() + f" ({matching_products_count} products)")
+    if matching_products_count > 1:
+        label = "products"
+    else:
+        label = "product"
+    print("+  " + d.title() + f"({matching_products_count} {label})")
 
 
 #filter function 2 parameters 1 way to sort, and th list to be sorted from
